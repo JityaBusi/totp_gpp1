@@ -15,7 +15,7 @@ PRIVATE_KEY_PATH = os.path.join(PROJECT_ROOT, "student_private.pem")
 PUBLIC_KEY_PATH = os.path.join(PROJECT_ROOT, "student_public.pem")
 
 # Example commit hash (replace with actual commit you want to test)
-COMMIT_HASH = "c2972d92647f141a5bb63710c5eae0ce139e6f71"
+COMMIT_HASH = "06af1b6ef96102b5c66ef85111fa39eb894c1b49"
 
 # ---------------------------
 # Load private key
