@@ -40,7 +40,6 @@ def decrypt_seed(encrypted_seed_b64: str, private_key) -> str:
 
     # 3. Decode bytes to UTF-8 string
     seed = decrypted_bytes.decode("utf-8")
-
     # 4. Validate: must be 64-character hex string
     if len(seed) != 64:
         raise ValueError(f"Decrypted seed length is {len(seed)}, expected 64")
@@ -55,7 +54,7 @@ def decrypt_seed(encrypted_seed_b64: str, private_key) -> str:
 
 def main():
     # Make sure encrypted_seed.txt exists (from previous step)
-    with open("encrypted_seed.txt", "r", encoding="utf-8") as f:
+    with open("/data/encrypted_seed.txt", "r", encoding="utf-8") as f:
         encrypted_seed_b64 = f.read().strip()
 
     # Load your private key
@@ -69,7 +68,7 @@ def main():
 
     # Store at data/seed.txt
     output_path = os.path.join("data", "seed.txt")
-    with open(output_path, "w", encoding="utf-8") as f:
+    with open("/data/seed.txt", "w", encoding="utf-8") as f:
         f.write(hex_seed)
 
     print("Decrypted seed:", hex_seed)
