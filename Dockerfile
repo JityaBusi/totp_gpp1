@@ -16,6 +16,9 @@ FROM python:3.12-slim
 ENV TZ=UTC
 
 WORKDIR /app
+# Install cron + procps (for ps)
+RUN apt-get update && apt-get install -y cron procps curl && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y cron procps coreutils
 
 # Install system dependencies: cron + tzdata
 RUN apt-get update && \

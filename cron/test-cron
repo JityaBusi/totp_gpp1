@@ -1,0 +1,1 @@
+* * * * * /usr/local/bin/python /app/scripts/log_2fa_cron.py >> /cron/totp_output.log 2>&1
